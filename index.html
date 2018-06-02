@@ -24,6 +24,8 @@
         <button id="start-button">Press to start</button>
 
     </div>
+
+    <div id="second-page">
     <span id="time"></span>
 <form id="trivia-game" name="quiz">
 
@@ -96,7 +98,12 @@
         </form>
 
         <button id="finish-button">Calculate Scores</button>
-        <div id="submit"></div>
+        </div>
+      <div id="score">
+        <p>correct: <div id="corrects"></div></p>
+       <p>wrong: <div id="wrongs"></div></p>
+       </div>
+       
 </body>
 
 
@@ -116,6 +123,7 @@
             if (--timer < 0) {
                 timer = 0;
             }
+            //timmer mil
         }, 1000);
     }
 
@@ -136,19 +144,19 @@
         initialScreen();
 
         //Hide button and go to next screen.
-
+window.onload= $("#second-page").hide()
+window.onload= $("#score").hide()
         $("#start-button").click(function () {
             $("#start-button").click(start())
             $(".first-page").hide(function () {
-
-
+            $("#second-page").show()
+           
 
 
             })
         })
 
-        var correct = 0
-        var wrong = 0
+
 
 //finish button
 
@@ -163,7 +171,8 @@ var question6=document.quiz.question6.value;
 var question7=document.quiz.question7.value;
 var question8=document.quiz.question8.value;
 
-var correct=0;
+var correct= 0;
+var wrong= 0;
 
 //correct guess
 if (question1=="ice"){
@@ -205,8 +214,65 @@ if (question8=="salmon"){
     console.log(correct)
 }
 
+// wrong guesses 
+
+if (question1 !=="ice"){
+    wrong++;
+  
+}
+
+if (question2 !=="spain"){
+    wrong++;
+   
+}
+
+if (question3 !=="50"){
+    wrong++;
+    
+}
+
+if (question4 !=="morgan"){
+    wrong++;
+    
+}
+
+if (question5 !=="molasses"){
+    wrong++;
+    
+}
+
+if (question6 !=="copper"){
+    wrong++;
+    
+}
+
+if (question7 !=="japan"){
+    wrong++;
+    
+}
+
+if (question8 !=="salmon"){
+    wrong++;
+   
+}
+
+
+
 console.log("clicked")
-$("#submit").html("You finished")
+
+
+$("#finish-button").append(function(){
+$("#corrects").text(correct);
+$("#wrongs").text(wrong);
+$("#second-page").hide()
+$("#score").show()
+})
+
+if (timer===0){
+$("#corrects").text(correct);
+$("#wrongs").text(wrong);
+}
+
 })
 
     })
