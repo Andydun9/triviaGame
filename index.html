@@ -1,173 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
     <link rel="icon" href="assets/images/led-bulb-48-193561.png" sizes="16x16">
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 
 <header>
-<h1>Movie Trivia</h1>
+    <h1>Food Trivia</h1>
 
 
 
 </header>
 
 <body>
-<div class="first-page">
-    <h2>Start Game</h2>
+    <div class="first-page">
+        <h2>Start Game</h2>
 
-    <button id="start-button">Press to start</button>
+        <button id="start-button">Press to start</button>
+
+    </div>
+    <span id="time"></span>
+<form id="trivia-game" name="quiz">
+
+    <h2>When a drink is served on the rocks, it is served with what&quest;</h2>
     
-  </div>
+        <input type="radio" name="question1" value="ice"> Ice
+        <input type="radio" name="question1" value="plain"> Plain
+        <input type="radio" name="question1" value="soda"> Soda
+        <input type="radio" name="question1" value="rocks"> Rocks
+  
 
-  <span id="time"></span>
+    <h2>Jamón ibérico is a type of cured ham that is traditionally produced by which two neighboring countries&quest;</h2>
+    
+        <input type="radio" name="question2" value="usa"> USA and Canada
+        <input type="radio" name="question2" value="germany"> Germany and Switzerland
+        <input type="radio" name="question2" value="spain"> Spain and Portugal
+        <input type="radio" name="question2" value="china"> China and Vietnam
+  
+
+    <h2>If a liquor is 100 proof how much alcohol does it contain by percentage&quest;</h2>
+
+   
+        <input type="radio" name="question3" value="100"> 100%
+        <input type="radio" name="question3" value="75"> 75%
+        <input type="radio" name="question3" value="50"> 50%
+        <input type="radio" name="question3" value="25"> 25%
+   
+
+    <h2>What notable brand of alcohol takes its name from the romanticized, storied life of a Welsh buccaneer who routed the Spanish in an attack on Panama City in 1671&quest;</h2>
+
+  
+            <input type="radio" name="question4" value="jerry"> Sailor Jerry
+            <input type="radio" name="question4" value="morgan"> Captian Morgan
+            <input type="radio" name="question4" value="ron"> Captian Ron
+            <input type="radio" name="question4" value="popeye"> Popeye the Sailor Man
+       
+   
+        <h2>What ingredient is added to white sugar to make brown sugar&quest;</h2>
+
+       
+                <input type="radio" name="question5" value="dirt"> Dirt
+                <input type="radio" name="question5" value="coke"> Coke
+                <input type="radio" name="question5" value="honey"> Honey
+                <input type="radio" name="question5" value="molasses">Molasses
+           
+
+            <h2>A Moscow Mule is a type of cocktail popularly served in what&quest;</h2>
+           
+           
+                    <input type="radio" name="question6" value="plastic"> Plastic Cup
+                    <input type="radio" name="question6" value="glass"> Bar Glass
+                    <input type="radio" name="question6" value="bottle"> Glass Bottle
+                    <input type="radio" name="question6" value="copper">Copper Cup
+                
+<h2>Sukiyaki is a popular hot pot dish from what country&quest;</h2>
+
+
+        <input type="radio" name="question7" value="japan"> Japan
+        <input type="radio" name="question7" value="china"> China
+        <input type="radio" name="question7" value="mongolia"> Mongolia
+        <input type="radio" name="question7" value="canada">Canada
+    
+
+    <h2>Lox, often served on a bagel, is a fillet of brined what?</h2>
+   
+            <input type="radio" name="question8" value="steak"> Steak
+            <input type="radio" name="question8" value="tuna"> Tuna
+            <input type="radio" name="question8" value="salmon"> Salmon
+            <input type="radio" name="question8" value="halibut"> Halibut
+        </form>
+
+        <button id="finish-button">Calculate Scores</button>
+        <div id="submit"></div>
 </body>
 
+
 <script>
-//timer
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
+    //timer
+    function startTimer(duration, display) {
+        var timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
+            display.textContent = minutes + ":" + seconds;
 
-        if (--timer < 0) {
-            timer = duration;
+            if (--timer < 0) {
+                timer = 0;
+            }
+        }, 1000);
+    }
+
+    function start() {
+        var thirtySeconds = 60 * 1,
+            display = document.querySelector('#time');
+        startTimer(thirtySeconds, display);
+    };
+
+
+    $(document).ready(function () {
+
+        function initialScreen() {
+            startScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start Quiz</a></p>";
+            $(".mainArea").html(startScreen);
         }
-    }, 1000);
+
+        initialScreen();
+
+        //Hide button and go to next screen.
+
+        $("#start-button").click(function () {
+            $("#start-button").click(start())
+            $(".first-page").hide(function () {
+
+
+
+
+            })
+        })
+
+        var correct = 0
+        var wrong = 0
+
+//finish button
+
+$("#finish-button").click(function(){
+
+var question1=document.quiz.question1.value;
+var question2=document.quiz.question2.value;
+var question3=document.quiz.question3.value;
+var question4=document.quiz.question4.value;
+var question5=document.quiz.question5.value;
+var question6=document.quiz.question6.value;
+var question7=document.quiz.question7.value;
+var question8=document.quiz.question8.value;
+
+var correct=0;
+
+//correct guess
+if (question1=="ice"){
+    correct++;
+    console.log(correct)
+}
+if (question2=="spain"){
+    correct++;
+    console.log(correct)
 }
 
-function start () {
-    var thirtySeconds = 60 * 1,
-        display = document.querySelector('#time');
-    startTimer(thirtySeconds, display);
-};
-
-
-$(document).ready(function(){
-
-function initialScreen() {
-	startScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start Quiz</a></p>";
-	$(".mainArea").html(startScreen);
+if (question3=="50"){
+    correct++;
+    console.log(correct)
 }
 
-initialScreen();
+if (question4=="morgan"){
+    correct++;
+    console.log(correct)
+}
 
-//Hide buttonand go to next screen.
+if (question5=="molasses"){
+    correct++;
+    console.log(correct)
+}
 
-$("#start-button").click(function(){
-   $("start-button").click(start())
-    $(".first-page").hide(function(){
+if (question6=="copper"){
+    correct++;
+    console.log(correct)
+}
 
-    })
-    
+if (question7=="japan"){
+    correct++;
+    console.log(correct)
+}
+
+if (question8=="salmon"){
+    correct++;
+    console.log(correct)
+}
+
+console.log("clicked")
+$("#submit").html("You finished")
 })
 
-var allQuestions = [{
-    question: "Before Mt. Everest was discovered, whaich mountain was considered to be the highest mountain in the world?",
-    choices: ["Mt. Kilimanjaro", "Kanchenjunga", "Mount Everest"],
-    correctAnswer: 1
-  },
-
-  {
-    question: "Does England have a 4th of July?",
-    choices: ["Yes", "No", "I don't know"],
-    correctAnswer: 0
-  },
-
-  {
-    question: "What is Rupert the bear's middle name?",
-    choices: ["Bear", "He doesn't have one!", "The", "Rupert"],
-    correctAnswer: 2
-  },
-
-  {
-    question: " What can you never eat for breakfast? ",
-    choices: ["Dinner", "Something sugary", "Lunch", "Supper"],
-    correctAnswer: 0
-  },
-
-  {
-    question: "If there are three apples and you took two away, how many do you have?",
-    choices: ["One", "Two", "None"],
-    correctAnswer: 1
-  },
-
-  {
-    question: "Spell 'Silk' out loud, 3 times in a row. What do cows drink?",
-    choices: ["Milk", "Water", "Juice", "Cows can't drink"],
-    correctAnswer: 1
-  },
-
-  {
-    question: "Which is heavier, 100 pounds of rocks or 100 pounds of gold? ",
-    choices: ["100 pounds of rocks", "100 pounds of rocks", "They weigh the same"],
-    correctAnswer: 2
-  },
-
-  {
-    question: "Can you spell 80 in two letters?",
-    choices: ["AI-TY", "It's not possible", "EIGH-TY", "A-T"],
-    correctAnswer: 3
-  },
-
-  {
-    question: "What question must always be answered ''Yes''?",
-    choices: ["What does Y-E-S spell?", "Will everyone die someday?", "Does everyone have a biological mother?", "Are you a human?"],
-    correctAnswer: 0
-  },
-
-  {
-    question: "How many sides does a circle have?",
-    choices: ["The back", "None. It's a circle", "Two", "Four"],
-    correctAnswer: 2
-  },
-
-  {
-    question: "What has a tail but no body?",
-    choices: ["A human", "A coin", "A cloud"],
-    correctAnswer: 1
-  },
-
-  {
-    question: "What word in the English language is always spelled incorrectly?",
-    choices: ["It's possible to spell anything right as long as you learn it", "Shakespeare", "Onomatopoeia", "Incorrectly"],
-    correctAnswer: 3
-  },
-
-  {
-    question: "When do you stop at green and go at red?",
-    choices: ["Watermelon!", "Traffic light!", "Garden"],
-    correctAnswer: 0
-  },
-
-  {
-    question: "What rotates but still remains in the same place?",
-    choices: ["Bottle (spin the bottle game)", "Clock", "Stairs"],
-    correctAnswer: 2
-  },
-
-  {
-    question: "How can you lift an elephant with one hand?",
-    choices: ["Truck", "Use both hands!", "Use a lever", "There is no such thing"],
-    correctAnswer: 3
-  }
-];
-
+    })
 
 
 
 </script>
+
 </html>
