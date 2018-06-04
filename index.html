@@ -26,71 +26,72 @@
     </div>
 
     <div id="second-page">
-    <span id="time"></span>
-<form id="trivia-game" name="quiz">
+        <span id="time"></span>
+        <form id="trivia-game" name="quiz">
 
-    <h2>When a drink is served on the rocks, it is served with what&quest;</h2>
-    
-        <input type="radio" name="question1" value="ice"> Ice
-        <input type="radio" name="question1" value="plain"> Plain
-        <input type="radio" name="question1" value="soda"> Soda
-        <input type="radio" name="question1" value="rocks"> Rocks
-  
+            <h2>When a drink is served on the rocks, it is served with what&quest;</h2>
 
-    <h2>Jamón ibérico is a type of cured ham that is traditionally produced by which two neighboring countries&quest;</h2>
-    
-        <input type="radio" name="question2" value="usa"> USA and Canada
-        <input type="radio" name="question2" value="germany"> Germany and Switzerland
-        <input type="radio" name="question2" value="spain"> Spain and Portugal
-        <input type="radio" name="question2" value="china"> China and Vietnam
-  
+            <input type="radio" name="question1" value="ice"> Ice
+            <input type="radio" name="question1" value="plain"> Plain
+            <input type="radio" name="question1" value="soda"> Soda
+            <input type="radio" name="question1" value="rocks"> Rocks
 
-    <h2>If a liquor is 100 proof how much alcohol does it contain by percentage&quest;</h2>
 
-   
-        <input type="radio" name="question3" value="100"> 100%
-        <input type="radio" name="question3" value="75"> 75%
-        <input type="radio" name="question3" value="50"> 50%
-        <input type="radio" name="question3" value="25"> 25%
-   
+            <h2>Jamón ibérico is a type of cured ham that is traditionally produced by which two neighboring countries&quest;</h2>
 
-    <h2>What notable brand of alcohol takes its name from the romanticized, storied life of a Welsh buccaneer who routed the Spanish in an attack on Panama City in 1671&quest;</h2>
+            <input type="radio" name="question2" value="usa"> USA and Canada
+            <input type="radio" name="question2" value="germany"> Germany and Switzerland
+            <input type="radio" name="question2" value="spain"> Spain and Portugal
+            <input type="radio" name="question2" value="china"> China and Vietnam
 
-  
+
+            <h2>If a liquor is 100 proof how much alcohol does it contain by percentage&quest;</h2>
+
+
+            <input type="radio" name="question3" value="100"> 100%
+            <input type="radio" name="question3" value="75"> 75%
+            <input type="radio" name="question3" value="50"> 50%
+            <input type="radio" name="question3" value="25"> 25%
+
+
+            <h2>What notable brand of alcohol takes its name from the romanticized, storied life of a Welsh buccaneer who routed
+                the Spanish in an attack on Panama City in 1671&quest;</h2>
+
+
             <input type="radio" name="question4" value="jerry"> Sailor Jerry
             <input type="radio" name="question4" value="morgan"> Captian Morgan
             <input type="radio" name="question4" value="ron"> Captian Ron
             <input type="radio" name="question4" value="popeye"> Popeye the Sailor Man
-       
-   
-        <h2>What ingredient is added to white sugar to make brown sugar&quest;</h2>
 
-       
-                <input type="radio" name="question5" value="dirt"> Dirt
-                <input type="radio" name="question5" value="coke"> Coke
-                <input type="radio" name="question5" value="honey"> Honey
-                <input type="radio" name="question5" value="molasses">Molasses
-           
+
+            <h2>What ingredient is added to white sugar to make brown sugar&quest;</h2>
+
+
+            <input type="radio" name="question5" value="dirt"> Dirt
+            <input type="radio" name="question5" value="coke"> Coke
+            <input type="radio" name="question5" value="honey"> Honey
+            <input type="radio" name="question5" value="molasses">Molasses
+
 
             <h2>A Moscow Mule is a type of cocktail popularly served in what&quest;</h2>
-           
-           
-                    <input type="radio" name="question6" value="plastic"> Plastic Cup
-                    <input type="radio" name="question6" value="glass"> Bar Glass
-                    <input type="radio" name="question6" value="bottle"> Glass Bottle
-                    <input type="radio" name="question6" value="copper">Copper Cup
-                
-<h2>Sukiyaki is a popular hot pot dish from what country&quest;</h2>
 
 
-        <input type="radio" name="question7" value="japan"> Japan
-        <input type="radio" name="question7" value="china"> China
-        <input type="radio" name="question7" value="mongolia"> Mongolia
-        <input type="radio" name="question7" value="canada">Canada
-    
+            <input type="radio" name="question6" value="plastic"> Plastic Cup
+            <input type="radio" name="question6" value="glass"> Bar Glass
+            <input type="radio" name="question6" value="bottle"> Glass Bottle
+            <input type="radio" name="question6" value="copper">Copper Cup
 
-    <h2>Lox, often served on a bagel, is a fillet of brined what?</h2>
-   
+            <h2>Sukiyaki is a popular hot pot dish from what country&quest;</h2>
+
+
+            <input type="radio" name="question7" value="japan"> Japan
+            <input type="radio" name="question7" value="china"> China
+            <input type="radio" name="question7" value="mongolia"> Mongolia
+            <input type="radio" name="question7" value="canada">Canada
+
+
+            <h2>Lox, often served on a bagel, is a fillet of brined what?</h2>
+
             <input type="radio" name="question8" value="steak"> Steak
             <input type="radio" name="question8" value="tuna"> Tuna
             <input type="radio" name="question8" value="salmon"> Salmon
@@ -98,17 +99,26 @@
         </form>
 
         <button id="finish-button">Calculate Scores</button>
-        </div>
-      <div id="score">
-        <p>correct: <div id="corrects"></div></p>
-       <p>wrong: <div id="wrongs"></div></p>
-       </div>
-       
+    </div>
+    <div id="score">
+        <p>correct:
+            <div id="corrects"></div>
+        </p>
+        <p>wrong:
+            <div id="wrongs"></div>
+        </p>
+    </div>
+<div class="timesUp">
+    <h2>Times Up</h2>
+    </div>
 </body>
 
 
 <script>
     //timer
+
+    //need clear interval
+
     function startTimer(duration, display) {
         var timer = duration, minutes, seconds;
         setInterval(function () {
@@ -122,35 +132,43 @@
 
             if (--timer < 0) {
                 timer = 0;
+
+                if (timer == 0) {
+                    $("#second-page").hide()
+                    $(".timesUp").show()
+                   
+                }
             }
-            //timmer mil
+            //timer speed
         }, 1000);
     }
 
     function start() {
-        var thirtySeconds = 60 * 1,
+        thirtySeconds = 60 * 1,
             display = document.querySelector('#time');
         startTimer(thirtySeconds, display);
     };
-
+    var thirtySeconds;
 
     $(document).ready(function () {
 
         function initialScreen() {
             startScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start Quiz</a></p>";
             $(".mainArea").html(startScreen);
+
         }
 
         initialScreen();
 
         //Hide button and go to next screen.
-window.onload= $("#second-page").hide()
-window.onload= $("#score").hide()
+        window.onload = $("#second-page").hide()
+        window.onload = $("#score").hide()
+        window.onload= $(".timesUp").hide()
         $("#start-button").click(function () {
             $("#start-button").click(start())
             $(".first-page").hide(function () {
-            $("#second-page").show()
-           
+                $("#second-page").show()
+
 
 
             })
@@ -158,124 +176,131 @@ window.onload= $("#score").hide()
 
 
 
-//finish button
+        //finish button
 
-$("#finish-button").click(function(){
+        $("#finish-button").click(function () {
 
-var question1=document.quiz.question1.value;
-var question2=document.quiz.question2.value;
-var question3=document.quiz.question3.value;
-var question4=document.quiz.question4.value;
-var question5=document.quiz.question5.value;
-var question6=document.quiz.question6.value;
-var question7=document.quiz.question7.value;
-var question8=document.quiz.question8.value;
+            var question1 = document.quiz.question1.value;
+            var question2 = document.quiz.question2.value;
+            var question3 = document.quiz.question3.value;
+            var question4 = document.quiz.question4.value;
+            var question5 = document.quiz.question5.value;
+            var question6 = document.quiz.question6.value;
+            var question7 = document.quiz.question7.value;
+            var question8 = document.quiz.question8.value;
 
-var correct= 0;
-var wrong= 0;
+            var correct = 0;
+            var wrong = 0;
 
-//correct guess
-if (question1=="ice"){
-    correct++;
-    console.log(correct)
-}
-if (question2=="spain"){
-    correct++;
-    console.log(correct)
-}
+            //correct guess
+            if (question1 == "ice") {
+                correct++;
+                console.log(correct)
+            }
+            if (question2 == "spain") {
+                correct++;
+                console.log(correct)
+            }
 
-if (question3=="50"){
-    correct++;
-    console.log(correct)
-}
+            if (question3 == "50") {
+                correct++;
+                console.log(correct)
+            }
 
-if (question4=="morgan"){
-    correct++;
-    console.log(correct)
-}
+            if (question4 == "morgan") {
+                correct++;
+                console.log(correct)
+            }
 
-if (question5=="molasses"){
-    correct++;
-    console.log(correct)
-}
+            if (question5 == "molasses") {
+                correct++;
+                console.log(correct)
+            }
 
-if (question6=="copper"){
-    correct++;
-    console.log(correct)
-}
+            if (question6 == "copper") {
+                correct++;
+                console.log(correct)
+            }
 
-if (question7=="japan"){
-    correct++;
-    console.log(correct)
-}
+            if (question7 == "japan") {
+                correct++;
+                console.log(correct)
+            }
 
-if (question8=="salmon"){
-    correct++;
-    console.log(correct)
-}
+            if (question8 == "salmon") {
+                correct++;
+                console.log(correct)
+            }
 
-// wrong guesses 
+            // wrong guesses 
 
-if (question1 !=="ice"){
-    wrong++;
-  
-}
+            if (question1 !== "ice") {
+                wrong++;
 
-if (question2 !=="spain"){
-    wrong++;
-   
-}
+            }
 
-if (question3 !=="50"){
-    wrong++;
-    
-}
+            if (question2 !== "spain") {
+                wrong++;
 
-if (question4 !=="morgan"){
-    wrong++;
-    
-}
+            }
 
-if (question5 !=="molasses"){
-    wrong++;
-    
-}
+            if (question3 !== "50") {
+                wrong++;
 
-if (question6 !=="copper"){
-    wrong++;
-    
-}
+            }
 
-if (question7 !=="japan"){
-    wrong++;
-    
-}
+            if (question4 !== "morgan") {
+                wrong++;
 
-if (question8 !=="salmon"){
-    wrong++;
-   
-}
+            }
+
+            if (question5 !== "molasses") {
+                wrong++;
+
+            }
+
+            if (question6 !== "copper") {
+                wrong++;
+
+            }
+
+            if (question7 !== "japan") {
+                wrong++;
+
+            }
+
+            if (question8 !== "salmon") {
+                wrong++;
+
+            }
+
+        
+
+            console.log("clicked")
+
+            //finish button
+            $("#finish-button").append(function () {
+                $("#corrects").text(correct);
+                $("#wrongs").text(wrong);
+                $("#second-page").hide()
+                $(".timesUp").hide()
+                $("#score").show()
+            })
 
 
+            //timer stop
+          
 
-console.log("clicked")
+            
 
 
-$("#finish-button").append(function(){
-$("#corrects").text(correct);
-$("#wrongs").text(wrong);
-$("#second-page").hide()
-$("#score").show()
-})
-
-if (timer===0){
-$("#corrects").text(correct);
-$("#wrongs").text(wrong);
-}
-
-})
+        })
 
     })
+
+
+
+
 
 
 
