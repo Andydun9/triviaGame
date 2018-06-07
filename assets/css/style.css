@@ -1,0 +1,105 @@
+/*
+colors:
+
+black #230903
+tan #656256
+biege #9EBC9F
+tope #D3B88C
+white #F4F2F3
+
+fonts:
+font-family: 'Song Myung', serif;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Kanit', sans-serif;
+
+*/
+
+html{
+    background-color: #230903;
+}
+
+header {
+    background-image: url(../images/pexels-photo-248427.jpeg);
+    width: 100%;
+    height: 40em;
+    margin: 0 auto;
+    margin-top: 0px; 
+    padding-top: 0px;
+    color: #F4F2F3;
+    font-family: 'Kanit', sans-serif;
+    text-align: center    
+}
+
+h1{
+    font-size: 3em;
+    padding-top: 2em;
+}
+
+.first-page{
+    width:75%;
+    text-align: center;
+    margin: auto;
+    background-color: #F4F2F3;
+    padding-bottom: 2em;
+}
+
+#start-button{
+    padding: 2em;
+    margin-top: 1em;
+    background-color: #656256;
+    color: #F4F2F3;
+    border: solid 3px black;
+    border-radius: 4px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: .25em;
+    font-size: 1em;
+}
+
+#start-button:hover{
+    background-color: #9EBC9F;
+    color:black;
+}
+
+#second-page{
+    width:75%;
+    text-align: center;
+    margin: auto;
+    background-color: #F4F2F3;
+    padding-bottom: 2em;
+    font-size: 1.25em;
+}
+
+#finish-button{
+    padding: 2em;
+    margin-top: 1em;
+    background-color: #656256;
+    color: #F4F2F3;
+    border: solid 3px black;
+    border-radius: 4px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: .25em;
+    font-size: 1em;
+}
+
+#finish-button:hover{
+    background-color: #9EBC9F;
+    color:black;
+}
+
+.timesUp{
+    width:75%;
+    text-align: center;
+    margin: auto;
+    background-color: #F4F2F3;
+    padding-bottom: 2em;
+}
+
+#score{
+    width:75%;
+    text-align: center;
+    margin: auto;
+    background-color: #F4F2F3;
+    padding-bottom: 2em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2em;
+}
